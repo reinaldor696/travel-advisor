@@ -1,4 +1,9 @@
-import { useState } from 'react'
+import React from "react";
+
+
+import Header from './component/Header/Header';
+import List from './component/List/List';
+import Map from './component/Map/Map';
 
 function App() {
   return (
