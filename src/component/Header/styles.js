@@ -1,6 +1,8 @@
-import { alpha, makeStyles } from "@mui/material";
+import { alpha } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 
-export default makeStyles((theme) => ({
+
+export const theme = createTheme((theme) => ({
   title: {
     display: 'none',
     [theme.breakpoints.up('sm')]: {
@@ -31,3 +33,5 @@ export default makeStyles((theme) => ({
   },
   
 }));
+
+
