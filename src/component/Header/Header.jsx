@@ -1,10 +1,10 @@
 import React from "react";
 
 import { AppBar, Toolbar, Typography, InputBase, Box } from "@mui/material";
-import { Search } from "@mui/icons-material";
+import SearchIcon from '@mui/icons-material/Search'
 
 import { ThemeProvider } from "@mui/material";
-import { theme } from "./styles";
+import theme from "./styles";
 
 const Header = () => {
     const classes = theme;
@@ -12,7 +12,7 @@ const Header = () => {
     return(
         <ThemeProvider theme={theme}>
         <AppBar position="static">
-            <Toolbar className={classes.toolbar}>
+            <Toolbar display='flex' className={classes.toolbar}>
                 <Typography variant="h5" className={classes.title}>
                     Travel Advisor
                 </Typography>
@@ -20,19 +20,19 @@ const Header = () => {
                     <Typography variant="h6" className={classes.title}>
                         Explore New Places
                     </Typography>
-                    {/* <Autocomplete> */}
+                    <div>
                         <div className={classes.search}>
                             <div className={classes.searchIcon}>
-                                <Search />
+                                <SearchIcon />
                             </div>
-                            <InputBase placeholder="Search..." classes={{ root: classes.inputRoot, input: classes.inputInput }} />
+                            <InputBase placeholder="Search" classes={{ root: classes.inputRoot, input: classes.inputInput }} />
                         </div>
-                    {/* </Autocomplete> */}
+                    </div>    
                 </Box>
             </Toolbar>
         </AppBar>
         </ThemeProvider>
-    )
+    );
 }
 
 export default Header;
