@@ -1,37 +1,48 @@
 import React from "react";
-
+import { Autocomplete } from "@react-google-maps/api";
 import { AppBar, Toolbar, Typography, InputBase, Box } from "@mui/material";
-import SearchIcon from '@mui/icons-material/Search'
+import SearchIcon from '@mui/icons-material/Search';
 
-import { ThemeProvider } from "@mui/material";
-import theme from "./styles";
 
 const Header = () => {
-    const classes = theme;
 
     return(
-        <ThemeProvider theme={theme}>
+        
         <AppBar position="static">
-            <Toolbar display='flex' className={classes.toolbar}>
-                <Typography variant="h5" className={classes.title}>
+            <Toolbar display='flex' sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Typography variant="h5" >
                     Travel Advisor
                 </Typography>
                 <Box display="flex">
-                    <Typography variant="h6" className={classes.title}>
+                    <Typography variant="h6" sx={{ display: 'flex', alignItems: 'center' }}>
                         Explore New Places
                     </Typography>
                     <div>
-                        <div className={classes.search}>
-                            <div className={classes.searchIcon}>
-                                <SearchIcon />
-                            </div>
-                            <InputBase placeholder="Search" classes={{ root: classes.inputRoot, input: classes.inputInput }} />
+                        <div>
+                            <div>
+                                <SearchIcon sx={{ 
+                                    height: '100%', 
+                                    position: 'absolute', 
+                                    pointerEvents: 'none', 
+                                    display: 'flex', 
+                                    alignItems: 'center', 
+                                    justifyContent: 'center',
+                                }}/>
+                            </div>    
+                            <InputBase placeholder="Search" sx={{
+                                position: 'relative', 
+                                color: 'inherit',
+                                padding: '1, 1, 1, 0', 
+                                paddingLeft: '5px', 
+                                width: '100%', 
+                                borderRadius: '20px',
+                                }} /> 
                         </div>
                     </div>    
                 </Box>
             </Toolbar>
         </AppBar>
-        </ThemeProvider>
+        
     );
 }
 

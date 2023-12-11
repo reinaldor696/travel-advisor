@@ -3,7 +3,7 @@ import { createTheme } from "@mui/material/styles";
 
 
 const theme = createTheme((theme) => ({
-  palette:{
+
     title: {
       display: 'none',
       [theme.breakpoints.up('sm')]: {
@@ -32,7 +32,6 @@ const theme = createTheme((theme) => ({
     toolbar: {
       display: 'flex', justifyContent: 'space-between',
     },
-  },  
 }));
 
 export default theme;
