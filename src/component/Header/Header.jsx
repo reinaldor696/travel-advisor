@@ -1,44 +1,32 @@
 import React from "react";
 import { Autocomplete } from "@react-google-maps/api";
-import { AppBar, Toolbar, Typography, InputBase, Box } from "@mui/material";
-import SearchIcon from '@mui/icons-material/Search';
+import { AppBar, Toolbar, Typography, InputBase, Box } from '@material-ui/core';
+import SearchIcon from '@material-ui/icons/Search'
+
+import useStyles from './styles'
 
 
 const Header = () => {
-
-    return(
-        
+    const classes = useStyles();
+    
+    return( 
         <AppBar position="static">
-            <Toolbar display='flex' sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Typography variant="h5" >
+            <Toolbar display='flex' className={classes.toolbar}>
+                <Typography variant="h5" className={classes.title} >
                     Travel Advisor
                 </Typography>
                 <Box display="flex">
-                    <Typography variant="h6" sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Typography variant="h6" className={classes.title}>
                         Explore New Places
                     </Typography>
-                    <div>
-                        <div>
-                            <div>
-                                <SearchIcon sx={{ 
-                                    height: '100%', 
-                                    position: 'absolute', 
-                                    pointerEvents: 'none', 
-                                    display: 'flex', 
-                                    alignItems: 'center', 
-                                    justifyContent: 'center',
-                                }}/>
+                    {/* */}
+                        <div className={classes.search}>
+                            <div className={classes.searchIcon}>
+                                <SearchIcon />
                             </div>    
-                            <InputBase placeholder="Search" sx={{
-                                position: 'relative', 
-                                color: 'inherit',
-                                padding: '1, 1, 1, 0', 
-                                paddingLeft: '5px', 
-                                width: '100%', 
-                                borderRadius: '20px',
-                                }} /> 
+                            <InputBase placeholder="Search…" classes={{ root: classes.inputRoot, input: classes.inputInput }} /> 
                         </div>
-                    </div>    
+                    {/* */}    
                 </Box>
             </Toolbar>
         </AppBar>
